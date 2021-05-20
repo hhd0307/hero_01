@@ -11,3 +11,12 @@ object Constant {
     const val PATH_IMAGE_CHAMPION = "img/champion"
     const val PATH_LIST_CHAMPION = "champion.json"
 }
+
+object HeroClass {
+    const val ASSASSIN = "Assassin"
+    const val FIGHTER = "Fighter"
+    const val MAGE = "Mage"
+    const val TANK = "Tank"
+    const val SUPPORT = "Support"
+    const val MARKSMAN = "Marksman"
+}

@@ -385,7 +385,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/sp_25"
         android:gravity="center"
-        android:text="@string/speed"
+        android:text="@string/attack_speed"
         android:textColor="@android:color/white"
         android:layout_marginTop="@dimen/dp_10"
         app:layout_constraintEnd_toStartOf="@+id/textViewSpeedSecondHero"

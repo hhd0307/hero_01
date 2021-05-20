@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.sun.hero_01.R
 import com.sun.hero_01.ui.`class`.ClassFragment
 import com.sun.hero_01.ui.champion.ChampionFragment
+import com.sun.hero_01.ui.detail.DetailFragment
 import com.sun.hero_01.ui.favorite.FavoriteFragment
 import com.sun.hero_01.utils.extensions.showIcon
 import kotlinx.android.synthetic.main.activity_main.*
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity() {
             showIcon()
         }
         loadFragment(ChampionFragment.newInstance())
+        //DEBUG START
+        loadFragment(DetailFragment.newInstance("Aatrox"))
+        //DEBUG END
     }
 
     private fun initEvent() {

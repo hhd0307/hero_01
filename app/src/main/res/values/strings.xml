@@ -16,7 +16,15 @@
     <string name="range">Range</string>
     <string name="movement">Movement</string>
     <string name="attack">Attack</string>
-    <string name="speed">Attack Speed</string>
+    <string name="attack_speed">Attack Speed</string>
     <string name="armor">Armor</string>
-    <string name="magic">Magic Resist</string>
+    <string name="health_regen">Health Regen</string>
+    <string name="defense">Defense</string>
+    <string name="magic">Magic</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="abilities">Abilities</string>
+    <string name="lore">Lore</string>
+    <string name="skin">Skin</string>
+    <string name="attack_stat">Attack:</string>
+    <string name="magic_resist">Magic Resist</string>
 </resources>

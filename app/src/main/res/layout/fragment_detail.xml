@@ -1,6 +1,580 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Hero Info-->
+        <ImageView
+            android:id="@+id/imageHeroBackground"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_170"
+            android:alpha="0.5"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewHeroImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_20"
+            app:cardCornerRadius="@dimen/dp_50"
+            app:layout_constraintBottom_toBottomOf="@+id/imageHeroBackground"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/textName"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageHeroBackground"
+            app:strokeColor="@color/flamingo"
+            app:strokeWidth="@dimen/dp_5">
+
+            <ImageView
+                android:id="@+id/imageHero"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_launcher_foreground" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@+id/cardViewHeroImage"
+            app:layout_constraintEnd_toEndOf="@+id/imageHeroBackground"
+            app:layout_constraintHorizontal_weight="0.7"
+            app:layout_constraintStart_toEndOf="@+id/cardViewHeroImage"
+            app:layout_constraintTop_toTopOf="@+id/cardViewHeroImage"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/textName"
+            app:layout_constraintStart_toStartOf="@+id/textName"
+            app:layout_constraintTop_toBottomOf="@+id/textName"
+            tools:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imagePrimaryTag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/imageHeroBackground"
+            app:layout_constraintDimensionRatio="h, 1:1"
+            app:layout_constraintStart_toStartOf="@+id/textName"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            app:layout_constraintWidth_percent="0.05"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/textPrimaryTag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imagePrimaryTag"
+            app:layout_constraintStart_toEndOf="@+id/imagePrimaryTag"
+            app:layout_constraintTop_toTopOf="@+id/imagePrimaryTag"
+            tools:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imageSecondaryTag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/imagePrimaryTag"
+            app:layout_constraintDimensionRatio="h, 1:1"
+            app:layout_constraintStart_toEndOf="@+id/textPrimaryTag"
+            app:layout_constraintTop_toTopOf="@+id/imagePrimaryTag"
+            app:layout_constraintWidth_percent="0.05"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/textSecondaryTag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageSecondaryTag"
+            app:layout_constraintStart_toEndOf="@+id/imageSecondaryTag"
+            app:layout_constraintTop_toTopOf="@+id/imageSecondaryTag"
+            tools:text="TextView" />
+
+        <!--        Hero Overview-->
+        <TextView
+            android:id="@+id/textInfoAttack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/attack"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/progressAttack"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageHeroBackground" />
+
+        <ProgressBar
+            android:id="@+id/progressAttack"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progressbar_drawable"
+            app:layout_constraintBottom_toBottomOf="@+id/textInfoAttack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@+id/textInfoAttack"
+            app:layout_constraintTop_toTopOf="@+id/textInfoAttack" />
+
+        <TextView
+            android:id="@+id/textDefense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/defense"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/progressAttack"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInfoAttack" />
+
+        <ProgressBar
+            android:id="@+id/progressDefense"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progressbar_drawable"
+            app:layout_constraintBottom_toBottomOf="@+id/textDefense"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@+id/textDefense"
+            app:layout_constraintTop_toTopOf="@+id/textDefense" />
+
+        <TextView
+            android:id="@+id/textMagic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/magic"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/progressAttack"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDefense" />
+
+        <ProgressBar
+            android:id="@+id/progressMagic"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progressbar_drawable"
+            app:layout_constraintBottom_toBottomOf="@+id/textMagic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@+id/textMagic"
+            app:layout_constraintTop_toTopOf="@+id/textMagic" />
+
+        <TextView
+            android:id="@+id/textDifficult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/difficulty"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/progressAttack"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMagic" />
+
+        <ProgressBar
+            android:id="@+id/progressDifficult"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progressbar_drawable"
+            app:layout_constraintBottom_toBottomOf="@+id/textDifficult"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@+id/textDifficult"
+            app:layout_constraintTop_toTopOf="@+id/textDifficult" />
+
+        <View
+            android:id="@+id/dividerHeroStat"
+            style="@style/HorizontalDivider"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDifficult" />
+
+        <View
+            style="@style/VerticalDivider"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textArmor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textHeal" />
+
+        <!--        Hero Stat-->
+        <TextView
+            android:id="@+id/textHeal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/health"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/textHealNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerHeroStat" />
+
+        <TextView
+            android:id="@+id/textHealNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textHeal"
+            app:layout_constraintEnd_toStartOf="@+id/textHealRegen"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textHeal"
+            app:layout_constraintTop_toTopOf="@+id/textHeal"
+            tools:text="999" />
+
+        <TextView
+            android:id="@+id/textHealRegen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:text="@string/health_regen"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textHealRegenNumber"
+            app:layout_constraintEnd_toStartOf="@+id/textHealRegenNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toEndOf="@+id/textHealNumber"
+            app:layout_constraintTop_toTopOf="@+id/textHealRegenNumber" />
+
+        <TextView
+            android:id="@+id/textHealRegenNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textHealRegen"
+            app:layout_constraintTop_toBottomOf="@+id/dividerHeroStat"
+            tools:text="999.9" />
+
+        <TextView
+            android:id="@+id/textRange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/range"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/textRangeNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textHeal" />
+
+        <TextView
+            android:id="@+id/textRangeNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textRange"
+            app:layout_constraintEnd_toStartOf="@+id/textMovement"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textRange"
+            app:layout_constraintTop_toTopOf="@+id/textRange"
+            tools:text="999" />
+
+        <TextView
+            android:id="@+id/textMovement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:text="@string/movement"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textMovementNumber"
+            app:layout_constraintEnd_toStartOf="@+id/textMovementNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toEndOf="@+id/textRangeNumber"
+            app:layout_constraintTop_toTopOf="@+id/textMovementNumber" />
+
+        <TextView
+            android:id="@+id/textMovementNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textMovement"
+            app:layout_constraintTop_toTopOf="@+id/textRange"
+            tools:text="999.9" />
+
+        <TextView
+            android:id="@+id/textAttack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/attack"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/textAttackNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRange" />
+
+        <TextView
+            android:id="@+id/textAttackNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textAttack"
+            app:layout_constraintEnd_toStartOf="@+id/textAttackSpeed"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textAttack"
+            app:layout_constraintTop_toTopOf="@+id/textAttack"
+            tools:text="999" />
+
+        <TextView
+            android:id="@+id/textAttackSpeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:text="@string/attack_speed"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textAttackSpeedNumber"
+            app:layout_constraintEnd_toStartOf="@+id/textAttackSpeedNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toEndOf="@+id/textAttackNumber"
+            app:layout_constraintTop_toTopOf="@+id/textAttackSpeedNumber" />
+
+        <TextView
+            android:id="@+id/textAttackSpeedNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textAttackSpeed"
+            app:layout_constraintTop_toTopOf="@+id/textAttack"
+            tools:text="999.9" />
+
+        <TextView
+            android:id="@+id/textArmor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/armor"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/textArmorNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAttack" />
+
+        <TextView
+            android:id="@+id/textArmorNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textArmor"
+            app:layout_constraintEnd_toStartOf="@+id/textMagicResist"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textArmor"
+            app:layout_constraintTop_toTopOf="@+id/textArmor"
+            tools:text="999" />
+
+        <TextView
+            android:id="@+id/textMagicResist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_40"
+            android:text="@string/magic_resist"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textMagicResistNumber"
+            app:layout_constraintEnd_toStartOf="@+id/textMagicResistNumber"
+            app:layout_constraintHorizontal_weight="0.35"
+            app:layout_constraintStart_toEndOf="@+id/textArmorNumber"
+            app:layout_constraintTop_toTopOf="@+id/textMagicResistNumber" />
+
+        <TextView
+            android:id="@+id/textMagicResistNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/textMagicResist"
+            app:layout_constraintTop_toTopOf="@+id/textArmor"
+            tools:text="999.9" />
+
+        <!--        Hero Abilities-->
+        <TextView
+            android:id="@+id/textAbility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/abilities"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMagicResistNumber" />
+
+        <View
+            android:id="@+id/dividerHeroAbility"
+            style="@style/HorizontalDivider"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAbility" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHeroAbility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/dividerHeroAbility"
+            app:layout_constraintStart_toStartOf="@+id/dividerHeroAbility"
+            app:layout_constraintTop_toBottomOf="@+id/dividerHeroAbility" />
+
+        <!--        Hero Lore-->
+        <TextView
+            android:id="@+id/textLore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/lore"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerHeroAbility" />
+
+        <View
+            android:id="@+id/dividerHeroLore"
+            style="@style/HorizontalDivider"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLore" />
+
+        <TextView
+            android:id="@+id/textLoreDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:justificationMode="inter_word"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerHeroLore" />
+
+        <!--        Hero Skin-->
+        <TextView
+            android:id="@+id/textSkin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/skin"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLoreDescription" />
+
+        <View
+            android:id="@+id/dividerHeroSkin"
+            style="@style/HorizontalDivider"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSkin" />
+
+        <ImageView
+            android:id="@+id/imageFirstSkin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_5"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="h,2:1"
+            app:layout_constraintEnd_toStartOf="@+id/imageSecondSkin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerHeroSkin"
+            app:layout_constraintWidth_percent="0.5"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageSecondSkin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="h,2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFirstSkin"
+            app:layout_constraintTop_toTopOf="@+id/imageFirstSkin"
+            app:layout_constraintWidth_percent="0.5"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -13,6 +13,9 @@
     <dimen name="dp_100">100dp</dimen>
     <dimen name="dp_170">170dp</dimen>
     <dimen name="dp_240">240dp</dimen>
+    
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
     <dimen name="sp_20">20sp</dimen>
     <dimen name="sp_25">25sp</dimen>
 </resources>
