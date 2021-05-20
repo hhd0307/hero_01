@@ -37,6 +37,13 @@ fun ImageView.loadHeroSpellImage(imageName: String?) {
     }
 }
 
+fun ImageView.loadHeroPassiveImage(imageName: String?) {
+    val url = "${Constant.BASE_URL}/${Constant.BASE_VERSION}/${Constant.PATH_IMAGE_PASSIVE}/"
+    imageName?.let {
+        LoadImageBitmap(this).execute(url + it)
+    }
+}
+
 fun ImageView.loadHeroClassImage(tag: String?) {
     var iconClass: Int = R.drawable.ic_all_class
     tag?.let {

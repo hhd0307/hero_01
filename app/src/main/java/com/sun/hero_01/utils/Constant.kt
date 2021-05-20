@@ -20,3 +20,7 @@ object HeroClass {
     const val SUPPORT = "Support"
     const val MARKSMAN = "Marksman"
 }
+
+object HeroSpellSymbol {
+    const val PASSIVE = "P"
+}

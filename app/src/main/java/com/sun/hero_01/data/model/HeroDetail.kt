@@ -10,7 +10,7 @@ data class HeroDetail(
     val secondaryTag: String?,
     val info: HeroInfo?,
     val stats: HeroStat?,
-    val spells: List<HeroSpell>?,
+    var spells: List<HeroSpell>?,
     val passive: HeroSpell?,
     var isFavorite: Boolean = false
 )

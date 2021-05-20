@@ -15,6 +15,7 @@ import com.sun.hero_01.utils.extensions.loadHeroSkinImage
 import com.sun.hero_01.utils.extensions.loadHeroSquareImage
 import kotlinx.android.synthetic.main.fragment_detail.*
 
+
 class DetailFragment : BaseFragment(), DetailContract.View {
 
     override val layoutResourceId = R.layout.fragment_detail
@@ -70,14 +71,14 @@ class DetailFragment : BaseFragment(), DetailContract.View {
             textPrimaryTag.text = primaryTag
             textSecondaryTag.text = secondaryTag
             stats?.let {
-                textHealNumber.text = stats.hp.toString()
-                textArmorNumber.text = stats.armor.toString()
-                textAttackNumber.text = stats.attackDamage.toString()
-                textMovementNumber.text = stats.moveSpeed.toString()
-                textRangeNumber.text = stats.attackRange.toString()
-                textAttackSpeedNumber.text = stats.attackSpeed.toString()
-                textHealRegenNumber.text = stats.hpRegen.toString()
-                textMagicResistNumber.text = stats.spellBlock.toString()
+                textHealNumber.text = it.hp.toString()
+                textArmorNumber.text = it.armor.toString()
+                textAttackNumber.text = it.attackDamage.toString()
+                textMovementNumber.text = it.moveSpeed.toString()
+                textRangeNumber.text = it.attackRange.toString()
+                textAttackSpeedNumber.text = it.attackSpeed.toString()
+                textHealRegenNumber.text = it.hpRegen.toString()
+                textMagicResistNumber.text = it.spellBlock.toString()
             }
             imageHero.loadHeroSquareImage(image)
             imagePrimaryTag.loadHeroClassImage(primaryTag)

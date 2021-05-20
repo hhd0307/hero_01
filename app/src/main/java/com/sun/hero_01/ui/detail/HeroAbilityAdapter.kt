@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sun.hero_01.R
 import com.sun.hero_01.data.model.HeroSpell
+import com.sun.hero_01.utils.HeroSpellSymbol
+import com.sun.hero_01.utils.extensions.loadHeroPassiveImage
 import com.sun.hero_01.utils.extensions.loadHeroSpellImage
 import kotlinx.android.synthetic.main.item_hero_ability.view.*
 
@@ -37,10 +39,13 @@ class HeroAbilityAdapter : RecyclerView.Adapter<HeroAbilityAdapter.ViewHolder?>(
 
         fun bind(spell: HeroSpell) {
             with(itemView) {
-                imageHeroSpell.loadHeroSpellImage(spell.image)
+                when (spell.id) {
+                    HeroSpellSymbol.PASSIVE -> imageHeroSpell.loadHeroPassiveImage(spell.image)
+                    else -> imageHeroSpell.loadHeroSpellImage(spell.image)
+                }
                 textSpellTitle.text = spell.name
                 textSpellDetail.text = spell.description
-                textSpellName.text = spell.id?.replace("Aatrox", "")
+                textSpellName.text = spell.id
             }
         }
     }
